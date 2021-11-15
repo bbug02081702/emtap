@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thẻ visit thông minh emtap - Đi đâu em cũng tap</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing:border-box ;
+      font-family: 'Poppins', sans-serif;
+    }
+    .sec{
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      padding: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #232323;
+      transition: 0.5s;
+
+    }
+    header{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 20px 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+    header .logo{
+      position: relative;
+      max-width: 80px;
+
+    }
+    header ul{
+      position: relative;
+      display: flex;
+    }
+    header ul li{
+      list-style: none;
+    }
+    header ul li a{
+      display: inline-block;
+      color: #fff;
+      font-weight: 400;
+      margin-left: 40px;
+      text-decoration: none;
+    }
+    .content{
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .content .textBox{
+      position: relative;
+      max-width: 600px;
+    }
+    .content .textBox h2{
+      color: #fff;
+      font-size: 4em;
+      line-height: 1.5em;
+      /* font-weight: 900; */
+      text-transform: uppercase;
+    }
+    .content .textBox h2 span{
+      font-size: 2em;
+
+    }
+    .content .textBox p{
+      color: #fff;
+    }
+    .content .textBox a{
+      display: inline-block;
+      margin-top: 20px;
+      padding: 8px 20px;
+      background: #fff;
+      color: #111;
+      border-radius: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+    }
+    .content .imgBox{
+      width: 600px;
+      display: flex;
+      padding-right: 50px;
+      margin-top: 50px;
+      justify-content: flex-end;
+    }
+    .content .imgBox img{
+      max-width: 260px;
+    }
+    .sci{
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      transform: rotateY(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .sci li{
+      list-style: none;
+    }
+    .sci li a{
+      display: inline-block;
+      filter: invert(1);
+      margin: 5px 0;
+      transform: scale(0.6);
+    }
+    @media (max-width: 991px){
+      .sec{
+        padding: 40px;
+      }
+      header{
+        padding: 20px 40px;
+      }
+      header .logo{
+        position: relative;
+        max-width: 60px;
+      }
+      header ul{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+        visibility: hidden;
+        opacity: 0;
+      }
+      header ul.active{
+        visibility: visible;
+        opacity: 1;
+      }
+      header ul li a{
+        display: inline-block;
+        color: #111;
+        font-weight: 400;
+        margin-left: 0;
+        text-decoration: none;
+        font-size: 2em;
+        margin: 10px 0;
+      }
+      header ul li a:hover{
+      color: #ed023e;
+      }
+      .toggleMenu{
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background: url(img/menu.png);
+        background-position: center;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        z-index: 2;
+        cursor: pointer;
+      }
+      .toggleMenu.active{
+        background: url(img/close.png);
+        background-position: center;
+        background-size: 25px;
+        background-repeat: no-repeat;
+        filter: invert(1);
+      }
+      .content{
+        flex-direction: column;
+        margin-top: 80px;
+      }
+      .content .textBox{
+        position: relative;
+        max-width: 100%;
+        padding-right: 20px;
+
+      }
+      .content .textBox h2{
+      font-size: 3em; 
+        
+      }
+      .content .textBox a{
+        font-size: 14px;
+        padding: 8px 15px;
+        
+      }
+      .content .imgBox{
+        width: 100%;
+        display: flex;
+        padding-right: 0;
+        margin-top: 50px;
+        justify-content: center;
+      }
+      .content .imgBox img{
+        max-width: 150px;
+      }
+    }
+    .sec0{
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      padding: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #232323;
+      transition: 0.5s;
+
+    }
+    .sec1{
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      padding: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #232323;
+      transition: 0.5s;
+
+    }
+    .sec2{
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      padding: 100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #232323;
+      transition: 0.5s;
+
+    }
+    .content{
+      position: relative;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .content .textBox{
+      position: relative;
+      max-width: 600px;
+    }
+    .content .textBox h2{
+      color: #fff;
+      font-size: 2.5em;
+      line-height: 1.5em;
+      /* font-weight: 900; */
+      text-transform: uppercase;
+    }
+    .content .textBox p{
+      color: #fff;
+    }
+    .content .imgBox{
+      width: 600px;
+      display: flex;
+      padding-right: 50px;
+      margin-top: 50px;
+      justify-content: flex-end;
+    }
+    .content .imgBox img{
+      max-width: 100%;
+      width: 400px;
+    }
+    @media (max-width: 991px){
+      .sec0{
+        padding: 40px;
+      }
+      .sec1{
+        padding: 40px;
+      }
+      .sec2{
+        padding: 40px;
+      }
+      .sec3{
+        padding: 40px;
+      }
+      .content{
+        flex-direction: column;
+        margin-top: 80px;
+      }
+      .content .textBox{
+        position: relative;
+        max-width: 100%;
+        padding-right: 20px;
+
+      }
+      .content .textBox h2{
+      font-size: 3em; 
+        
+      }
+      .content .imgBox{
+        width: 100%;
+        display: flex;
+        padding-right: 0;
+        margin-top: 50px;
+        justify-content: center;
+      }
+      /* .content .imgBox img{
+        max-width: 150px;
+      } */
+    }
+    .sec3{
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #232323;
+      transition: 0.5s;
+
+    }
+    .content3 .imgBox3{
+      width: 100%;
+    }
+    .content3 .textBox3{
+     width: 100%;
+    }
+    .content3 .textBox3 h2{
+      color: #fff;
+      font-size: 2.5em;
+      line-height: 1.5em;
+      /* font-weight: 900; */
+      text-transform: uppercase;
+    }
+    .content3 .textBox3 p{
+      color: #fff;
+    }
+    .imgBox1 img{
+      width: 50%;
+      height: auto;
+      float: left;
+
+    }
+    .imgBox2 img{
+      width: 50%;
+      height: auto;
+      float: right;
+    }
+    .tieude3{
+      font-weight: 600;
+      text-align: center;
+      color: #fff;
+      font-size: 2.5em;
+    }
+    section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #232323;
+      overflow: hidden;
+      padding: 100px 20px;
+      box-sizing: border-box;
+    }
+    .container{
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .container .card{
+      position: relative;
+      width: 300px;
+      height: 400px;
+      margin: 20px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(15px);
+    }
+    .container .card .imgBx{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      transition: 0.5s ease-in-out;
+    }
+    .container .card:hover .imgBx{
+      transform: translateY(-100px);
+    }
+    .container .card .imgBx img{
+     max-width: 100%;
+     margin: 0 0 20px;
+     transition: 0.5s ease-in-out;
+
+    }
+    .container .card:hover .imgBx img{
+      transform: translate(-20px, -40px) rotate(-25deg) scale(1.4);
+    }
+    .container .card .imgBx h2{
+     color: #fff;
+     font-weight: 600;
+    }
+    .container .card .content{
+      position: absolute;
+      bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: 0.5s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
+    }
+    .container .card:hover .content{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50px);
+    }
+    .container .card .content .size,
+    .container .card .content .color{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 20px;
+    }
+    .container .card .content .size h3,
+    .container .card .content .color h3{
+     color: #fff;
+     font-weight: 300;
+     font-size: 14px;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     margin-right: 10px;
+    }
+    .container .card .content .size span{
+      width: 26px;
+      height: 26px;
+      text-align: center;
+      line-height: 24px;
+      display: inline-block;
+      color: #111;
+      background: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      margin: 0 5px;
+      font-weight: 500;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+    .container .card .content .size span:hover{
+      background: #9bdc28;
+    }
+    .container .card .content .color span{
+      width: 20px;
+      height: 20px;
+      background: #f00;
+      border-radius: 50%;
+      margin: 0 5px;
+      border: 2px solid #fff;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+    .container .card .content .color span:nth-child(2){
+      background: #9bdc28;
+    }
+    .container .card .content .color span:nth-child(3){
+      background: #03a9f4;
+    }
+    .container .card .content .color span:nth-child(4){
+      background: #e91e63;
+    }
+    .container .card .content a{
+      position: relative;
+      top: 10px;
+      display: inline-block;
+      padding: 12px 30px;
+      background: #fff;
+      border-radius: 40px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: #111;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    footer{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 50px 100px;
+    background: #3044a5;
+}
+footer .containerfooter{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+footer .containerfooter .giay h2{
+position: relative;
+color: #fff;
+font-weight: 500;
+margin-bottom: 15px;
+}
+footer .containerfooter .giay h2::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #ffeb3b;
+}
+footer .containerfooter .giay p{
+    color: #fff;
+}
+.linkfooter{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,50px);
+    grid-gap: 10px;
+}
+.linkfooter li{
+    list-style: none;
+}
+.linkfooter li a{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: #3e56cb;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.linkfooter li a:hover{
+    background: #6380fe;
+}
+.linkfooter li a .fa{
+    color: #fff;
+    font-size: 20px;
+}
+.quicklinks{
+    position: relative;
+}
+.quicklinks li{
+ list-style: none;
+}
+.quicklinks li a{
+    color: #f7f7f7;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.quicklinks li a:hover{
+    color: #ffeb3b;
+}
+.info{
+    position: relative;
+}
+.info li{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    margin-bottom: 16px;
+}
+.info li span:nth-child(1){
+    color: #fff;
+    font-size: 20px;
+}
+.info li span{
+    color: #fff;
+}
+.info a{
+    color: #f7f7f7;
+    text-decoration: none;
+}
+.info a:hover{
+    color: #ffeb3b;
+}
+.copyright{
+    width: 100%;
+    background: #1f3389;
+    padding: 8px 100px;
+    text-align: center;
+    color: #fff;
+}
+@media (max-width:991px){
+    footer{
+    padding: 40px;
+    }
+    footer .containerfooter{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .copyright{
+        padding: 8px 40px;
+    }
+    @media (max-width: 768px) {
+        footer .containerfooter{
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+}
+  </style>
+</head>
+<body>
+  <div class="sec">
+    <header>
+      <a href="#"><img width = "101px" height="101px" src="img/logoemtap.png" loading="lazy"></a>
+      <div class="toggleMenu" onclick="menuToggle();"></div>
+      <ul class="navigation">
+        <li><a href="#">Trang chủ</a></li>
+        <li><a href="#">Sản phẩm</a></li>
+        <li><a href="#">Hướng dẫn</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li><a href="#">Liên hệ mua ngay</a></li>
+      </ul>
+    </header>
+    <div class="content">
+        <div class="textBox">
+          <h2>Để lại dấu ấn cá nhân với một chạm </h2>
+          <p>
+            Những ưu điểm của card visit thông minh emtap: <br>
+            + Xây dựng thương hiệu cá nhân chuyên nghiệp<br>
+            Chiếc Card này giúp bạn thể hiện sự chuyên nghiệp của mình trước đối tác, khách hàng, hỗ trợ công việc thuận lợi.<br>
+            + Thay đổi thông tin mà không cần in lại card<br>
+            Bạn có thể tùy chỉnh avatar và các thông tin khác một cách dễ dàng mà không cần làm lại Card Visit.<br>
+            + Thay đổi thông tin mà không cần in lại card<br>
+            Bạn có thể tùy chỉnh avatar và các thông tin khác một cách dễ dàng mà không cần làm lại Card Visit.<br>
+            + Giao diện thông tin chuyên nghiệp, tạo dấu ấn cho khách hàng đối tác trao đổi thông tin với nhau.
+            + Emtapp - Đi đâu em cũng tap
+           </p>
+          <a href="#">Mua ngay</a>
+        </div>
+        <div class="imgBox">
+          <img src="img/tet.png" alt="" loading="lazy">
+        </div>
+    </div>
+    <ul class="sci">
+      <li><a href="#"><img src="img/facebook.png" loading="lazy"></a></li>
+      <li><a href="#"><img src="img/instagram.png" loading="lazy"></a></li>
+      <li><a href="#"><img src="img/twitter.png" loading="lazy"></a></li>
+    </ul>
+  </div>
+  <script type="text/javascript">
+    function menuToggle(){
+      const toggleMenu = document.querySelector('.toggleMenu');
+      const navigation = document.querySelector('.navigation');
+      toggleMenu.classList.toggle('active');
+      navigation.classList.toggle('active');
+    }
+  </script>
+  <div class="sec0">
+    <div class="content">
+      <div class="textBox">
+        <h2>Card visit thông ming emtap</h2>
+        <p>
+          KHÔNG CẦN CÀI ĐẶT GÌ THÊM:<br>
+          + Chạm thẻ emtap vào điện thoại để chia sẻ thông tin, giảm thời gian trao đổi các mạng xã hội như Facebook, Instagram, Zalo, Số điện thoại, Email và thông tin liên lạc.<br>
+          + Không thu phí hàng tháng.<br>
+          + Thoải mái đổi thông tin không giới hạn.<br>
+          + Không giới hạn số lần chạm thẻ.<br>
+          + An toàn, không yêu cầu quyền truy cập và mật khẩu.
+         </p>
+      </div>
+      <div class="imgBox">
+        <img src="media/4.ffd9b5ac.gif" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="sec1">
+    <div class="content">
+      <div class="textBox">
+        <h2>Bước 1: Chọn loại thẻ và nhập thông tin</h2>
+        <p>
+         Chọn mẫu loại thẻ bạn ưng ý và nhập các thông tin:<br>
+         + Tên trên thẻ của bạn.<br>
+         + Các liên kết mạng xã hội của bạn như: Facebook, youtube, zalo, instagram, tiktok, email, số tài khoản ngân hàng...<br>
+         + Hoặc làm theo yêu cầu riêng của bạn.
+         </p>
+      </div>
+      <div class="imgBox">
+        <video width="320" height="240" loop="true" autoplay="autoplay" controls muted>
+          <source src="media/whitecard-front.13427173.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="sec2">
+    <div class="content">
+      <div class="textBox">
+        <h2>Bước 2: Thêm thông tin, sửa đổi giao diện theo ý thích</h2>
+        <p>
+         Khi nhận hàng bạn nhận được thẻ và tờ giấy hướng dẫn sử dụng:<br>
+         + Bạn có thể chỉnh sửa thông tin giao diện theo ý thích.<br>
+         + Chỉnh sửa các liên kết mạng xã hội của bạn như: Facebook, youtube, zalo, instagram, tiktok, email, số tài khoản ngân hàng...<br>
+         + Chúng tôi bảo hành 12 tháng nếu như có lỗi hoặc bạn có thể yêu cầu hỗ trợ từ chúng tôi sẵn lòng 24/24.
+         </p>
+      </div>
+      <div class="imgBox">
+        <video width="100%" loop="true" autoplay="autoplay" controls muted>
+          <source src="media/rotation.e1fdf8a9.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+  <div class="sec3">
+    <div class="content3">
+      <div class="textBox3">
+        <h2>Bước 3: Sử dụng</h2>
+        <p>
+         Card visit thông minh emtap hoạt động hầu hết trên tất cả các máy có hệ điều hành ios và android.
+         </p>
+      </div>
+      <div class="imgBox1">
+        <img src="media/emtap.gif" alt="">
+      </div>
+      <div class="imgBox2">
+        <img src="media/emtap.gif" alt="">
+      </div>
+      <div class="tieude3">
+        <p>Chọn mua theo mẫu thẻ</p>
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="container">
+      <div class="card">
+        <div class="imgBx">
+          <img src="img/mauthe.png" alt="" loading="lazy">
+          <h2>Thẻ love</h2>
+        </div>
+        <div class="content">
+          <div class="size">
+            <h3>Mã :</h3>
+              <span>1</span>
+              <span>7</span>
+              <span>0</span>
+              <span>2</span>
+          </div>
+          <div class="color">
+              <h3>Đèn :</h3>
+                <span></span>
+                <span></span>
+                <span></span>
+          </div>
+           <a href="#">Mua ngay</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="img/emtapreal.png" alt="" loading="lazy">
+          <h2>Thẻ clb Real Madrid</h2>
+        </div>
+        <div class="content">
+          <div class="size">
+            <h3>Mã :</h3>
+              <span>1</span>
+              <span>7</span>
+              <span>0</span>
+              <span>3</span>
+          </div>
+          <div class="color">
+              <h3>Đèn :</h3>
+                <span></span>
+                <span></span>
+                <span></span>
+          </div>
+           <a href="#">Mua ngay</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="img/emtapchelsea.png" alt="" loading="lazy">
+          <h2>Thẻ clb Chelsea</h2>
+        </div>
+        <div class="content">
+          <div class="size">
+            <h3>Mã :</h3>
+              <span>1</span>
+              <span>7</span>
+              <span>0</span>
+              <span>4</span>
+          </div>
+          <div class="color">
+              <h3>Đèn :</h3>
+                <span></span>
+                <span></span>
+                <span></span>
+          </div>
+           <a href="#">Mua ngay</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="img/emtappsg.png" alt="" loading="lazy">
+          <h2>Thẻ clb PSG</h2>
+        </div>
+        <div class="content">
+          <div class="size">
+            <h3>Mã :</h3>
+              <span>1</span>
+              <span>7</span>
+              <span>0</span>
+              <span>5</span>
+          </div>
+          <div class="color">
+              <h3>Đèn :</h3>
+                <span></span>
+                <span></span>
+                <span></span>
+          </div>
+           <a href="#">Mua ngay</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="img/emtapfcb.png" alt=""loading="lazy">
+          <h2>Thẻ clb Barcelona</h2>
+        </div>
+        <div class="content">
+          <div class="size">
+            <h3>Mã :</h3>
+              <span>1</span>
+              <span>7</span>
+              <span>0</span>
+              <span>6</span>
+          </div>
+          <div class="color">
+              <h3>Đèn :</h3>
+                <span></span>
+                <span></span>
+                <span></span>
+          </div>
+           <a href="#">Mua ngay</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="img/emtapman.png" alt="" loading="lazy">
+          <h2>Thẻ clb Manchester United</h2>
+        </div>
+        <div class="content">
+          <div class="size">
+            <h3>Mã :</h3>
+              <span>1</span>
+              <span>7</span>
+              <span>0</span>
+              <span>7</span>
+          </div>
+          <div class="color">
+              <h3>Đèn :</h3>
+                <span></span>
+                <span></span>
+                <span></span>
+          </div>
+           <a href="#">Mua ngay</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="img/emtapbasic.png" alt="" loading="lazy">
+          <h2>Thẻ làm theo yêu cầu</h2>
+        </div>
+        <div class="content">
+          <div class="size">
+            <h3>Mã :</h3>
+              <span>1</span>
+              <span>7</span>
+              <span>0</span>
+              <span>8</span>
+          </div>
+          <div class="color">
+              <h3>Đèn :</h3>
+                <span></span>
+                <span></span>
+                <span></span>
+          </div>
+           <a href="#">Mua ngay</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="img/emtapsh.png" alt="" loading="lazy">
+          <h2>Thẻ University</h2>
+        </div>
+        <div class="content">
+          <div class="size">
+            <h3>Mã :</h3>
+              <span>1</span>
+              <span>7</span>
+              <span>0</span>
+              <span>9</span>
+          </div>
+          <div class="color">
+              <h3>Đèn :</h3>
+                <span></span>
+                <span></span>
+                <span></span>
+          </div>
+           <a href="#">Mua ngay</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="imgBx">
+          <img src="img/emtapidol.png" alt="" loading="lazy">
+          <h2>Thẻ My Idol</h2>
+        </div>
+        <div class="content">
+          <div class="size">
+            <h3>Mã :</h3>
+              <span>1</span>
+              <span>7</span>
+              <span>0</span>
+              <span>10</span>
+          </div>
+          <div class="color">
+              <h3>Đèn :</h3>
+                <span></span>
+                <span></span>
+                <span></span>
+          </div>
+           <a href="#">Mua ngay</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+      let marker = document.querySelector('#marker');
+      let list = document.querySelectorAll('ul li');
+      
+      function moveIndicator(e){
+          marker.style.left = e.offsetLeft +'px';
+          marker.style.width = e.offsetWidth +'px';
+      }
+      
+      list.forEach(link => {
+          link.addEventListener('mousemove', (e) => {
+              moveIndicator(e.target);
+          })
+      })
+      
+      function activeLink(){
+          list.forEach((item) =>
+          item.classList.remove('active'));
+          this.classList.add('active');
+      }
+      list.forEach((item) =>
+      item.addEventListener('mouseover', activeLink));
+  </script>
+  <footer>
+    <div class="containerfooter">
+       <div class="giay aboutus">
+          <h2>Giới thiệu</h2>
+          <p>Emtap - Thẻ cá nhân thông minh kết nối thế giới<br>
+            Dễ dàng thay đổi thông tin mà không phải in lại như Card Visit giấy.
+            Gói thẻ đa dạng với chi phí hợp lý cho bạn lựa chọn.
+            Nâng tầm thương hiệu cá nhân ngay hôm nay với Emtap!</p>
+          <ul class="linkfooter">
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+          </ul>
+       </div>
+       <div class="giay quicklinks">
+         <h2>Emtap</h2>
+         <ul>
+             <li><a href="#">Chính sách đổi trả</a></li>
+             <li><a href="#">Chính sách bảo mật</a></li>
+             <li><a href="#">Điều khoản dịch vụ</a></li>
+         </ul>
+       </div>
+       <div class="giay quicklinks">
+        <h2>Shop</h2>
+        <ul>
+            <li><a href="#">Mua ngay trên shopee</a></li>
+        </ul>
+       </div>
+       <div class="giay contact">
+          <h2>Emtap - Kết nối cuộc sống</h2>
+          <ul class="info">
+              <li>
+                  <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                  <span>Ngõ 11, đường Phạm Kinh VỸ, phường Bến Thủy, thành phố Vinh, tỉnh Nghệ An, Việt Nam</span>
+              </li>
+              <li>
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+               <p><a href="#">+84364289473</a></p>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+               <p><a href="#">yuntips1702@gmail.com</a></p>
+              </li>
+          </ul>
+        </div>
+    </div>
+</footer>
+<div class="copyright">
+ <p>Copyright © 2021 Emtap. Powered by Emtap.xyz</p>
+</div>
+</body>
+</html>
