@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <title>Nguyễn Xuân Tài - Sống đam mê</title>
+<style>
+ @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}      
+body{
+   margin: 10px 10px 10px 10px;
+   display: grid;
+   height: 100%;
+   width: 100%;
+   place-items: center;
+   justify-content: center;
+   background: #001300;
+}
+.khung1 .anh img{
+   border: 2px solid #fff;
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   display: block; 
+   margin: auto;
+}
+section{
+   border-radius: 10px;
+   position: relative;
+   height: auto;
+   display: flex;
+   flex-direction: column;
+   animation: changeColor 5s linear infinite;
+}
+@keyframes changeColor{
+ 0%{
+   filter: hue-rotate(0deg);
+ }
+ 100%{
+   filter: hue-rotate(360deg);
+ }
+}
+section h2{
+   margin: auto;
+   color: #00fa00;
+   font-family: sans-serif;
+   font-weight: 700;
+   letter-spacing: 10px;
+}
+section .loader{
+   position: relative;
+   display: flex;
+}
+section .loader .dot{
+   position: relative;
+   display: block;
+   width: 20px;
+   height: 20px;
+   background: #00f00a;
+   box-shadow: 0 0 10px #00f00a, 0 0 20px #00f00a, 0 0 40px #00f00a, 0 0 60px #00f00a, 0 0 80px #00f00a, 0 0 100px #00f00a;
+   margin: 20px 10px;
+   transform: scale(0.1);
+   border-radius: 50%;
+   animation: animateDot 2s linear infinite;
+   animation-delay: calc(0.1s * var(--i));
+}
+section .loader:last-child .dot{
+   animation-delay: calc(-0.1s * var(--i));
+}
+@keyframes animateDot{
+ 0%{
+   transform: scale(0.1);
+ }
+ 10%{
+   transform: scale(1);
+ }
+ 50%,100% {
+   transform: scale(0.1);
+ }
+}
+.tieusu{
+   font-family: 'Poppins', sans-serif;
+   text-align: center;
+   font-size: 20px;
+   color: rgb(255, 255, 255);
+}
+.card{
+    text-align: center;
+    margin-top: 3.5%;
+}
+
+.div-round {
+    max-width: 100%;
+    width: 350px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    margin: auto;
+}
+.div-round::before {
+    display: block;
+    content: "";
+    margin-top: 10px;
+}
+
+.iframe-round {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+.rowb {
+  width: 100%;
+}
+
+.row {
+  margin-top: 3%;
+  width: 100%;
+  width: 350px;
+  height: 75px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #fff;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+#rowl img{
+  width: 50px;
+  height: 50px;
+  
+}
+
+#rowr {
+justify-content: center;
+margin-left: 20.5%;
+}
+
+#td {
+    color: #295396;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+#td1{
+    color: #c23774;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+#td2{
+    color: #1c0b1b;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+#td3{
+    color: #fe0000;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+#td4{
+    color: #005be0;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+#td5{
+    color: #36c836;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+#td6{
+    color: #1857a7;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+#td61{
+    color: #a60364;
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+a{
+  text-decoration: none;
+}
+.card1{
+  margin: auto;
+  margin-top: 3%;
+  border-radius: 10px;
+  position: relative;
+  width: 350px;
+  height: 75px;
+  background-color: #fff;
+  /* padding: 20px; */
+  overflow: hidden;
+  transform: height 0.5s ease-in-out;
+}
+.card1.active{
+height: 200px;
+}
+.card1 .content {
+  margin-top: 3.5%;
+  display: flex;
+  align-items: center;
+}   
+.card1 .content .imgbx{
+ position: relative;
+ width: 50px;
+ height: 50px;
+ border-radius: 50px;
+ overflow: hidden;
+} 
+.card1 .content .imgbx img{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+.card1 .content h2{
+    margin-left: 17%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #ec0733;
+    font-family: 'Poppins', sans-serif;
+}
+.card1 .content h2 span{
+ font-size: 0.8em;
+ font-weight: 400;
+  color: #999;
+}
+.navigation{
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 100;
+  font-family: 'Poppins', sans-serif;
+   
+  /* top: 25px;
+  border-top: 1px solid rgb(0,0,0.1); */
+  padding: 10px 0;
+}
+.toggle{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 40px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+}
+.toggle ion-icon{
+  color: aliceblue;
+  font-size: 1.4em;
+  transition: transform ease-in-out 0.5s;
+}
+.card1.active .toggle ion-icon{
+  transform: rotate(-180deg);
+}
+#saochep{
+    font-size: 1.2rem;
+    width: 25%;
+    height: 10%;
+}
+.card2{
+  margin: auto;
+  margin-top: 3%;
+  border-radius: 10px;
+  position: relative;
+  width: 350px;
+  height: 75px;
+  background-color: #fff;
+  /* padding: 20px; */
+  overflow: hidden;
+  transform: height 0.5s ease-in-out;
+}
+.card2.active{
+height: 200px;
+}
+.card2 .content {
+  margin-top: 3.5%;
+  display: flex;
+  align-items: center;
+}   
+.card2 .content .imgbx{
+ position: relative;
+ width: 50px;
+ height: 50px;
+ border-radius: 50px;
+ overflow: hidden;
+} 
+.card2 .content .imgbx img{
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+.card2 .content h2{
+    margin-left: 17%;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #000ed0;
+    font-family: 'Poppins', sans-serif;
+}
+.card2 .content h2 span{
+ font-size: 0.8em;
+ font-weight: 400;
+  color: #999;
+}
+.navigation1{
+  position: relative;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 100;
+  font-family: 'Poppins', sans-serif;
+  padding: 10px 0;
+}
+.toggle1{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 40px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 100;
+}
+.toggle1 ion-icon{
+  color: aliceblue;
+  font-size: 1.4em;
+  transition: transform ease-in-out 0.5s;
+}
+.card2.active .toggle1 ion-icon{
+  transform: rotate(-180deg);
+}
+#saochep1{
+    font-size: 1.2rem;
+    width: 25%;
+    height: 10%;
+}
+
+</style>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'> 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="khung1">
+        <div class="anh">
+            <img src="img/IMG_1462.jpg" alt="Nguyễn Xuân Tài" loading="lazy">
+        </div>
+        <div class="name">
+            <section>
+                <div class="loader">
+                    <div class="dot" style="--i:0"></div>
+                    <div class="dot" style="--i:1"></div>
+                    <div class="dot" style="--i:2"></div>
+                    <div class="dot" style="--i:3"></div>
+                    <div class="dot" style="--i:4"></div>
+                    <div class="dot" style="--i:5"></div>
+                    <div class="dot" style="--i:6"></div>
+                    <div class="dot" style="--i:7"></div>
+                    <div class="dot" style="--i:8"></div>
+                    <div class="dot" style="--i:9"></div>
+                </div>
+                <h2>NGUYỄN XUÂN TÀI</h2>
+                <div class="loader">
+                    <div class="dot" style="--i:0"></div>
+                    <div class="dot" style="--i:1"></div>
+                    <div class="dot" style="--i:2"></div>
+                    <div class="dot" style="--i:3"></div>
+                    <div class="dot" style="--i:4"></div>
+                    <div class="dot" style="--i:5"></div>
+                    <div class="dot" style="--i:6"></div>
+                    <div class="dot" style="--i:7"></div>
+                    <div class="dot" style="--i:8"></div>
+                    <div class="dot" style="--i:9"></div>
+                </div>
+            </section>
+        </div>
+        <div class="tieusu">
+            <span>
+                <P>Sống đam mê</P>
+            </span>
+        </div>
+        <div class="card">
+            <form methon="get" action="vcf/vcard.vcf">
+                <button>
+                    <b><i class="far fa-address-book"></i>Lưu liên hệ</b>
+                </button>
+            </form>
+        <div>
+            <div class="div-round">
+                <iframe class="iframe-round" allow="autoplay; encrypted-media; fullscreen" src="https://www.youtube.com/embed/i5kHT9kVL6Q?modestbranding=1&autoplay=0"></iframe>
+            </div>
+        <div class="button">
+            <div class="rowb">
+                <a href="https://www.facebook.com/vietmabug" target="blank"><!--edit -->
+                    <div class="row">
+                        <div id="rowl">
+                            <img src="img/fb.png" loading="lazy">
+                        </div>
+                        <div id="rowr">
+                            <div id="td">Facebook</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="rowb">
+                <a href="https://www.facebook.com/vietmabug" target="blank"><!--edit -->
+                    <div class="row">
+                        <div id="rowl">
+                            <img src="img/ig.png" loading="lazy">
+                        </div>
+                        <div id="rowr">
+                            <div id="td1">Instagram</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="rowb">
+                <a href="https://www.tiktok.com/@vietmabug" target="blank"><!--edit -->
+                    <div class="row">
+                        <div id="rowl">
+                            <img src="img/tik.png" loading="lazy">
+                        </div>
+                        <div id="rowr">
+                            <div id="td2">Tiktok</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="rowb">
+                <a href="https://www.youtube.com/vietmabug" target="blank"><!--edit -->
+                    <div class="row">
+                        <div id="rowl">
+                            <img src="img/yt.png" loading="lazy">
+                        </div>
+                        <div id="rowr">
+                            <div id="td3">YouTube</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="rowb">
+                <a href="https://www.zalo.me/0364289473" target="blank"><!--edit -->
+                    <div class="row">
+                        <div id="rowl">
+                            <img src="img/zalo.png" loading="lazy">
+                        </div>
+                        <div id="rowr">
+                            <div id="td4">Zalo</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="rowb">
+                <a href="tel:0364289473" target="blank"><!--edit -->
+                    <div class="row">
+                        <div id="rowl">
+                            <img src="img/phone.png" loading="lazy">
+                        </div>
+                        <div id="rowr">
+                            <div id="td5">0364289473</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="rowb">
+                <a href="mailto:yuntips1702@gmail.com" target="blank"><!--edit -->
+                    <div class="row">
+                        <div id="rowl">
+                            <img src="img/email.png" loading="lazy">
+                        </div>
+                        <div id="rowr">
+                            <div id="td6">Gmail</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="rowb">
+                <a href="https://nhantien.momo.vn/0364289473" target="blank"><!--edit -->
+                    <div class="row">
+                        <div id="rowl">
+                            <img src="img/momo.png" loading="lazy">
+                        </div>
+                        <div id="rowr">
+                            <div id="td61">Ví Momo</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="card1">
+                <a href="https://vtpay.page.link/3Ksa" target="blank">
+                <div class="content">
+                  <div class="imgbx">
+                     <img src="img/vtp.png" loading="lazy" alt="">
+                  </div>
+                  <h2>ViettelPay</h2>
+                </div>
+                </a>
+                <div class="navigation">
+                  <p>Tên chủ thẻ: Nguyễn Xuân Tài<p>Số thẻ:</p><span id="btnsotk">9704229215028684</span></p>
+                   <button onclick = "copyToClipboard('#btnsotk')" id="saochep">Sao chép</button>
+                </div>
+                <div class="toggle">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+              </div>
+              <div class="card2">
+                <a href="https://play.google.com/store/apps/details?id=com.mbmobile" target="blank">
+                <div class="content">
+                  <div class="imgbx">
+                     <img src="img/mb.png" loading="lazy" alt="">
+                  </div>
+                  <h2>MB Bank</h2>
+                </div>
+                </a>
+                <div class="navigation1">
+                  <p>Tên tài khoản: NGUYEN XUAN TAI<p>Số tài khoản:</p><span id="btnsotk1">0364289473</span></p>
+                   <button onclick = "copyToClipboard1('#btnsotk1')" id="saochep1">Sao chép</button>
+                </div>
+                <div class="toggle1">
+                  <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+              </div>
+
+            
+           
+        </div>
+    </div>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    const card1 = document.querySelector('.card1');
+    const card1toggle = document.querySelector('.toggle');
+     card1toggle.onclick = function(){
+      card1.classList.toggle('active');}
+  </script>
+  <script>
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).text()).select();
+        document.execCommand("copy");
+        $temp.remove();
+        alert("Đã copy xong!!!" );
+    }
+    </script>
+    <script>
+        const card2 = document.querySelector('.card2');
+        const card2toggle1 = document.querySelector('.toggle1');
+         card2toggle1.onclick = function(){
+          card2.classList.toggle('active');}
+      </script>
+      <script>
+        function copyToClipboard1(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+            alert("Đã copy xong!!!" );
+        }
+        </script>
+</body>
+</html>
